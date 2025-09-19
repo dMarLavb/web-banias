@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адаптивний сайт</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "menu nav aside"
+          "menu content aside"
+          "menu footer aside"
+          "bottom bottom bottom";
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: auto auto 1fr auto auto;
+        min-height: 100vh;
+      }
+
+      header,
+      nav,
+      aside,
+      .menu,
+      .content,
+      footer,
+      .bottom {
+        padding: 15px;
+        box-sizing: border-box;
+      }
+
+      header {
+        grid-area: header;
+        background: #b3cde0;
+        text-align: center;
+      }
+
+      nav {
+        grid-area: nav;
+        background: #ccebc5;
+        text-align: center;
+      }
+
+      aside {
+        grid-area: aside;
+        background: #fbb4ae;
+      }
+
+      .menu {
+        grid-area: menu;
+        background: #fbb4ae;
+      }
+      .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      .menu li {
+        margin: 8px 0;
+      }
+      .menu a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+      }
+
+      .content {
+        grid-area: content;
+        background: #fff;
+        min-height: 200px;
+      }
+
+      footer {
+        grid-area: footer;
+        background: #ccebc5;
+        text-align: center;
+      }
+
+      .bottom {
+        grid-area: bottom;
+        background: #b3cde0;
+        text-align: center;
+      }
+
+      /* Адаптивність для вузьких екранів */
+      @media (max-width: 900px) {
+        .container {
+          grid-template-areas:
+            "header"
+            "menu"
+            "nav"
+            "content"
+            "aside"
+            "footer"
+            "bottom";
+          grid-template-columns: 1fr;
+        }
+        .menu {
+          text-align: center;
+        }
+        .menu li {
+          display: inline-block;
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Мій адаптивний сайт</h1>
+      </header>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="page2.html">Сторінка 2</a></li>
+          <li><a href="page3.html">Сторінка 3</a></li>
+          <li><a href="page4.html">Сторінка 4</a></li>
+          <li><a href="page5.html">Сторінка 5</a></li>
+        </ul>
+      </div>
+
+      <nav>
+        <p>Навігаційний блок</p>
+      </nav>
+
+      <aside>
+        <p>Бокова панель</p>
+      </aside>
+
+      <div class="content">
+        <h2>Основний контент</h2>
+        <p>Цей блок автоматично збільшується при додаванні більше тексту.</p>
+        <p>
+          Ще абзац для перевірки. Якщо їх буде сотні, сторінка стане довшою — і
+          все одно працюватиме.
+        </p>
+      </div>
+
+      <footer>
+        <p>Нижній блок</p>
+      </footer>
+
+      <div class="bottom">
+        <h2>Фінальний блок сайту</h2>
+      </div>
+    </div>
+  </body>
+</html>
